@@ -1,45 +1,39 @@
-import time
-from wlan import Wlan
-from display import Display
-from flow import FlowMeter
-from temperature import TemperatureMeter
-from cloud import Cloud
+def web_page():
+  if led.value() == 1:
+    gpio_state="ON"
+  else:
+    gpio_state="OFF"
+  
+  html = """<html><head> <title>ESP Web Server</title> <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,"> <style>html{font-family: Helvetica; display:inline-block; margin: 0px auto; text-align: center;}
+  h1{color: #0F3376; padding: 2vh;}p{font-size: 1.5rem;}.button{display: inline-block; background-color: #e7bd3b; border: none; 
+  border-radius: 4px; color: white; padding: 16px 40px; text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}
+  .button2{background-color: #4286f4;}</style></head><body> <h1>ESP Web Server</h1> 
+  <p>GPIO state: <strong>""" + gpio_state + """</strong></p><p><a href="/?led=on"><button class="button">ON</button></a></p>
+  <p><a href="/?led=off"><button class="button button2">OFF</button></a></p></body></html>"""
+  return html
 
-# --- Begin configuration --- 
-ssid = 'Smartphone'
-password = '123456789'
-url = 'https://nwigsvkiq4reugluegyn5ovdxa0qagdp.lambda-url.eu-central-1.on.aws/'
-# --- End configuration ---
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(('', 80))
+s.listen(5)
 
-
-display = Display()
-display.text('Shower monitor', 10)
-display.text('Version 1.0.4', 20)
-display.text('01/10/2022', 30)
-display.show()
-
-wlan = Wlan()
-wlan.printNetworks()
-wlan.connect(ssid, password)
-
-flow_meter = FlowMeter()
-flow_meter.start()
-
-temperature_meter = TemperatureMeter()
-
-cloud = Cloud(url)
-
-
-# Infinite main program loop
 while True:
-    try:
-        time_stamp = time.ticks_ms()
-        temp = temperature_meter.readTemp()
-        flow = flow_meter.readFlow()
-        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'flow': flow})        
-    except Exception as ex:
-        print('Exception', str(ex))
-        pass
-    time.sleep(1)
-
-
+  conn, addr = s.accept()
+  print('Got a connection from %s' % str(addr))
+  request = conn.recv(1024)
+  request = str(request)
+  print('Content = %s' % request)
+  led_on = request.find('/?led=on')
+  led_off = request.find('/?led=off')
+  if led_on == 6:
+    print('LED ON')
+    led.value(1)
+  if led_off == 6:
+    print('LED OFF')
+    led.value(0)
+  response = web_page()
+  conn.send('HTTP/1.1 200 OK\n')
+  conn.send('Content-Type: text/html\n')
+  conn.send('Connection: close\n\n')
+  conn.sendall(response)
+  conn.close()
