@@ -5,7 +5,7 @@ import time
 class Wlan:
     def __init__(self):
        self.station = network.WLAN(network.STA_IF) 
-#       self.station.active(True)
+       self.station.active(True)
        print('Wlan ready')
 
     def scan(self):
@@ -29,7 +29,7 @@ class Wlan:
             self.station.disconnect()
         except:
             pass
-#        self.station.active(False)        
+        self.station.active(True)        
         time.sleep(1)
         
     def printNetworks(self) -> None:
