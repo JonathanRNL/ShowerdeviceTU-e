@@ -33,10 +33,10 @@ cloud = Cloud(url)
 # Infinite main program loop
 while True:
     try:
-        time_stamp = time.ticks_ms()
+        time_stamp = time.time()
         temp = temperature_meter.readTemp()
         flow = flow_meter.readFlow()
-        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'flow': flow})        
+        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'flow': flow/7.5})        
     except Exception as ex:
         print('Exception', str(ex))
         pass
