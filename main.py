@@ -35,8 +35,8 @@ while True:
     try:
         time_stamp = time.time()
         temp = temperature_meter.readTemp()
-        volume = flow_meter.readFlow()
-        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'volume': volume})        
+        flow = flow_meter.readFlow()
+        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'flow': flow/7.5})        
     except Exception as ex:
         print('Exception', str(ex))
         pass
