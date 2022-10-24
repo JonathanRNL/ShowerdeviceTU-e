@@ -32,7 +32,7 @@ time_stamp_at_start = time.time()
 # Infinite main program loop
 while True:
     try:        
-        temp = temperature_meter.readTemp()
+        temp = adc_to_celsius(temperature_meter.readTemp())
         volume = flow_meter.readFlow()
         time_stamp = time.time()
         duration:str = convert(time_stamp - time_stamp_at_start)
