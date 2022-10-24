@@ -11,6 +11,8 @@ wlan.py;
 timer.py;
 temp_conversion.py
 
+Be sure that you use the latest vesions!
+
 Do not forget to config:
 ssid = 'lilygo'
 password = 'lilygo123'
