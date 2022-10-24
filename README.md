@@ -1,14 +1,14 @@
 # ShowerdeviceTU/e
 The right files:
-boot.py
-cloud.py
-display.py
-flow.py
-main.py
-ssd1306.py
-temperature.py
-wlan.py
-timer.py
+boot.py;
+cloud.py;
+display.py;
+flow.py;
+main.py;
+ssd1306.py;
+temperature.py;
+wlan.py;
+timer.py;
 temp_conversion.py
 
 Setup guide available as PDF-file (part of one of the SSAs)
