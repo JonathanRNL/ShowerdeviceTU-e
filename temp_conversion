@@ -1,5 +1,3 @@
-from time import sleep
-from machine import ADC
 from math import log
 
 
@@ -12,4 +10,4 @@ Vavdd = 3.3 # reference voltage and source voltage to the divider (3.3 V)
 
 # functions
 def adc_to_celsius(v):
-    return ((1 / (log(1/(R1*v/(R298*(Vavdd-v))))/Beta + 1/298.15)) - Kelvin_constant)   
+    return ((1 / (log(1/(R1*v/(R298*(Vavdd-v))))/Beta + 1/298.15)) - Kelvin_constant)
