@@ -42,7 +42,7 @@ while True:
         display.text(f'Degrees:{temp_rounded}', 25)
         display.text(f'Time:{duration}', 50)
         display.show()
-        print(f'time:{duration}')
+        #print(f'time:{duration}')
         cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'volume': volume})        
     except Exception as ex:
         print('Exception', str(ex))
