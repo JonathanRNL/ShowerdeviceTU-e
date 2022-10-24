@@ -1,5 +1,5 @@
 # ShowerdeviceTU/e
-The right files:
+The right files are:
 boot.py;
 cloud.py;
 display.py;
