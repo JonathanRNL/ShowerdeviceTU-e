@@ -7,5 +7,5 @@ class TemperatureMeter:
         self.adc.atten(ADC.ATTN_11DB)   # Full range: 3.3v
         
     def readTemp(self) -> int:
-        return self.adc.read()  # read a raw analog value in the range 0-4096
-   
+        x = self.adc.read_uv()
+        return x/1000000  # read a raw analog value in the range 0-4096
