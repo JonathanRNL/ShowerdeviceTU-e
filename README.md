@@ -11,8 +11,9 @@ wlan.py;
 timer.py;
 temp_conversion.py
 
-Setup guide available as PDF-file (part of one of the SSAs)
-Bin.file included as separate file
+Do not forget to config:
+ssid = 'lilygo'
+password = 'lilygo123'
 
 Do not change the URL in main.py!
 This URL is needed for the uploading of the data.
