@@ -6,6 +6,7 @@ from temperature import TemperatureMeter
 from cloud import Cloud
 from timer import convert
 from temp_conversion import adc_to_celsius
+import storage
 
 # --- Begin configuration --- 
 ssid = 'lilygo'
@@ -30,23 +31,35 @@ cloud = Cloud(url)
 
 time_stamp_at_start = time.time()
 n_counter = 0
+n_counter_2 = 0
 temp_sum = 0
+duration = 0
 # Infinite main program loop
 while True:
     try:
         n_counter += 1
         temp = adc_to_celsius(temperature_meter.readTemp())
-        temp_rounded = round(temp)
+        temp_rounded = int(round(temp))
         temp_sum += temp
         temp_average = temp_sum/n_counter
+        storage.write_file("temperature.txt", temp_average) 
         volume = int(flow_meter.readFlow())
+        volume_2 = flow_meter.readFlow_2()
+        storage.write_file("volume.txt", volume_2) 
         time_stamp = time.time()
-        duration:str = convert(time_stamp - time_stamp_at_start)
+        if volume_2 > 0.01:
+            n_counter_2 += 3
+            duration:str = convert(n_counter_2)
+            storage.write_file("timer.txt", duration) 
+        duration_read_storage = storage.read_file("timer.txt")
         display.clear()
         display.text(f'Water:{volume} liters', 10)
         display.text(f'Degrees:{temp_rounded}', 25)
-        display.text(f'Time:{duration}', 50)
+        display.text(f'Time:{duration_read_storage}', 50)
         display.show()
+        #print(f'average temp {temp_average}')
+        #print(f'time:{duration}')
+        #print(f'volume: {volume_2}')      
         cloud.sendData({ 'timestamp': time_stamp, 'temp': temp_average, 'volume': volume})        
     except Exception as ex:
         print('Exception', str(ex))
