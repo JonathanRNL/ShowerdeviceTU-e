@@ -29,11 +29,16 @@ cloud = Cloud(url)
 
 
 time_stamp_at_start = time.time()
+n_counter = 0
+temp_sum = 0
 # Infinite main program loop
 while True:
-    try:        
+    try:
+        n_counter += 1
         temp = adc_to_celsius(temperature_meter.readTemp())
         temp_rounded = round(temp)
+        temp_sum += temp
+        temp_average = temp_sum/n_counter
         volume = flow_meter.readFlow()
         time_stamp = time.time()
         duration:str = convert(time_stamp - time_stamp_at_start)
@@ -42,8 +47,7 @@ while True:
         display.text(f'Degrees:{temp_rounded}', 25)
         display.text(f'Time:{duration}', 50)
         display.show()
-        #print(f'time:{duration}')
-        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp, 'volume': volume})        
+        cloud.sendData({ 'timestamp': time_stamp, 'temp': temp_average, 'volume': volume})        
     except Exception as ex:
         print('Exception', str(ex))
         pass
