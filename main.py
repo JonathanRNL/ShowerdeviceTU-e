@@ -45,7 +45,7 @@ while True:
         storage.write_file("temperature.txt", temp_average) 
         volume = int(flow_meter.readFlow())
         volume_2 = flow_meter.readFlow_2()
-        storage.write_file("volume.txt", volume_2) 
+        storage.write_file("volume.txt", volume) 
         time_stamp = time.time()
         if volume_2 > 0.01:
             n_counter_2 += 3
