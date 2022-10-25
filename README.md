@@ -9,7 +9,10 @@ ssd1306.py;
 temperature.py;
 wlan.py;
 timer.py;
-temp_conversion.py
+temp_conversion.py;
+storage.py
+
+~~~add timer.txt manually to avoid error~~
 
 Be sure that you use the latest vesions!
 
