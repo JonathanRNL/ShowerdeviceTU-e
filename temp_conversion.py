@@ -5,7 +5,7 @@ from math import log
 Beta = 3977 # characteristic thermistor value
 Kelvin_constant = 273.15
 R1 = 50000
-R298 = 35000 # resistance of termistor at 298.15K (own resistance)
+R298 = 50000 # resistance of termistor at 298.15K (own resistance)
 Vavdd = 3.3 # reference voltage and source voltage to the divider (3.3 V)
 
 # functions
