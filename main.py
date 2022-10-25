@@ -39,7 +39,7 @@ while True:
         temp_rounded = round(temp)
         temp_sum += temp
         temp_average = temp_sum/n_counter
-        volume = flow_meter.readFlow()
+        volume = int(flow_meter.readFlow())
         time_stamp = time.time()
         duration:str = convert(time_stamp - time_stamp_at_start)
         display.clear()
