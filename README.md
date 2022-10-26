@@ -12,7 +12,7 @@ timer.py;
 temp_conversion.py;
 storage.py
 
-add timer.txt manually to avoid error
+Add timer.txt manually to avoid an error
 
 Be sure that you use the latest vesions!
 
@@ -26,4 +26,4 @@ Do not change the URL in main.py!
 This URL is needed for the uploading of the data.
 
 For accessing the data online, go to: https://showercontroller.s3.eu-central-1.amazonaws.com/data.json
-The data is in a JSON-format.~~~
+The data is in a JSON-format.
