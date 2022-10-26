@@ -15,7 +15,7 @@ storage.py
 Updates in:
 main.py;
 storage.py;
-flow,py
+flow.py
 
 Add timer.txt manually to avoid an error
 
