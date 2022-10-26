@@ -12,6 +12,11 @@ timer.py;
 temp_conversion.py;
 storage.py
 
+Updates in:
+main.py;
+storage.py;
+flow,py
+
 Add timer.txt manually to avoid an error
 
 Be sure that you use the latest vesions!
