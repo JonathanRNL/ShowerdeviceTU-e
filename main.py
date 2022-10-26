@@ -48,7 +48,7 @@ while True:
         volume_2 = flow_meter.readFlow_2()
         storage.write_file("volume.txt", volume) 
         time_stamp = time.time()
-        if volume_2 > 0.005: #flow treshold
+        if volume_2 > 0.001: #flow treshold
             n_counter_2 += 3.5 #change if needed due to lag
             duration:str = convert(n_counter_2)
             storage.write_file("timer.txt", duration) 
