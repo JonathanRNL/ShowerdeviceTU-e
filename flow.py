@@ -27,3 +27,7 @@ class FlowMeter:
         previousvolume= self.volume
         self.volume = (self.counter/11)/60 + previousvolume
         return self.volume
+    
+    def readFlow_2(self) -> int:
+        self.volume_2 = ((self.counter/11))/60
+        return self.volume_2
