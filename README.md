@@ -1,5 +1,14 @@
 ~~~# ShowerdeviceTU/e
+
+Updates in:
+
+main.py;
+storage.py;
+flow.py;
+display.py
+
 The right files are:
+
 boot.py;
 cloud.py;
 display.py;
@@ -12,11 +21,7 @@ timer.py;
 temp_conversion.py;
 storage.py
 
-Updates in:
-main.py;
-storage.py;
-flow.py;
-display.py
+
 
 Add timer.txt manually to avoid an error
 
