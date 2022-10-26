@@ -53,7 +53,7 @@ while True:
             storage.write_file("timer.txt", duration) 
         duration_read_storage = storage.read_file("timer.txt")
         display.clear()
-        display.text(f'Water: {volume} Liters', 10)
+        display.text(f'Water: {volume} liters', 10)
         display.text(f'Degrees: {temp_rounded}', 25)
         display.text(f'Time: {duration_read_storage}', 50)
         display.show()
