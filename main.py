@@ -12,7 +12,7 @@ import storage
 # --- Begin configuration --- 
 ssid = 'lilygo'
 password = 'lilygo123'
-url = 'https://nwigsvkiq4reugluegyn5ovdxa0qagdp.lambda-url.eu-central-1.on.aws/'
+url = 'url'
 # --- End configuration ---
 
 
