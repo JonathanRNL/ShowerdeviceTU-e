@@ -1,4 +1,6 @@
 ~~~# ShowerdeviceTU/e
+Code of ShowerBud Team 105
+
 The right files are:
 boot.py;
 cloud.py;
