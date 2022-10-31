@@ -1,6 +1,6 @@
 ~~~# ShowerdeviceTU/e
 Code of ShowerBud Team 105
-Eindhoven University of Technology (Technische Universiteit Eindhoven)
+
 
 The right files are:
 boot.py;
