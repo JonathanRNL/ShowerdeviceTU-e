@@ -27,5 +27,5 @@ The program runs in the main and uses all the modules.
 Do not change the URL in main.py!
 This URL is needed for the uploading of the data.
 
-For accessing the stored data online, go to: https://showercontroller.s3.eu-central-1.amazonaws.com/data.json
+For accessing the stored data online, go to: url
 The data is in a JSON-format.
