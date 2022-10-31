@@ -1,11 +1,4 @@
 ~~~# ShowerdeviceTU/e
-
-Updates in:
-main.py;
-storage.py;
-flow.py;
-display.py
-
 The right files are:
 boot.py;
 cloud.py;
@@ -21,7 +14,7 @@ storage.py
 
 Add timer.txt manually to avoid an error
 
-Be sure that you use the latest vesions!
+Be sure that you use the latest vesions.
 
 Do not forget to config:
 ssid = 'lilygo'
