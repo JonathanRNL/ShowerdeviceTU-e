@@ -1,3 +1,4 @@
+#ShowerBud Team 105
 from machine import ADC, Pin
 
 class TemperatureMeter:
