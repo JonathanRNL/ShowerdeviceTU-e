@@ -1,3 +1,4 @@
+#ShowerBud Team 105
 import ssd1306
 from machine import Pin, SoftI2C
 
