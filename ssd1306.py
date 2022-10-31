@@ -1,3 +1,4 @@
+#ShowerBud Team 105
 #MicroPython SSD1306 OLED driver, I2C and SPI interfaces created by Adafruit
 
 import time
